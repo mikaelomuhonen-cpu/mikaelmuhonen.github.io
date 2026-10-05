@@ -1,281 +1,182 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CuePoint – Tutustu snookerin maailmaan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>CuePoint – Tutustu snookerin maailmaan</title>
 
-<style>
-  :root {
-    --bg: #101414;
-    --content-bg: #18211F;
-    --accent: #1F7A4D;
-    --accent-2: #D4AF37;
-    --text-main: #FFFFFF;
-    --text-secondary: #B8C0BD;
-  }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--bg);
-    color: var(--text-main);
-    font-family: 'Open Sans', sans-serif;
-  }
-
-  
-  .site-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background: var(--content-bg);
-  }
-
-  .logo {
-    height: 72px;
-    width: auto;
-    display: block;
-  }
-
-  nav ul {
-    display: flex;
-    gap: 28px;
-    list-style: none;
-  }
-
-  nav a {
-    color: var(--text-main);
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-  }
-
-  nav a:hover { color: var(--accent); }
-
-  
-  .hero {
-    position: relative;
-    height: 460px;
-    overflow: hidden;
-  }
-
-  .hero-table {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(16,20,20,0.35), rgba(16,20,20,0.9));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-  }
-
-  .hero-overlay h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 48px;
-    margin-bottom: 16px;
-  }
-
-  .hero-overlay p {
-    color: var(--text-secondary);
-    font-size: 17px;
-    max-width: 560px;
-    margin-bottom: 28px;
-  }
-
-  .cta {
-    display: inline-block;
-    background: var(--accent);
-    color: var(--text-main);
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    padding: 14px 32px;
-    border-radius: 8px;
-    transition: background 0.2s ease;
-  }
-
-  .cta:hover { background: #24925d; }
-
-  
-  .sections-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-    padding: 60px 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .card {
-    background: var(--content-bg);
-    border: 1px solid transparent;
-    border-radius: 12px;
-    padding: 28px;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-  }
-
-  .card h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-
-  .card p {
-    color: var(--text-secondary);
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
-  .card .tag {
-    display: inline-block;
-    margin-top: 16px;
-    color: var(--accent-2);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-  }
-
-  
-  footer {
-    text-align: center;
-    padding: 30px 20px;
-    color: var(--text-secondary);
-    font-size: 13px;
-    background: var(--content-bg);
-  }
-</style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
 <header class="site-header">
 
-  <a href="index.html" aria-label="CuePoint etusivulle">
-    <svg class="logo" viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CuePoint logo">
-      <title>CuePoint logo</title>
+    <a href="index.html" aria-label="CuePoint etusivulle">
 
-      <circle cx="130" cy="90" r="15" fill="#D4AF37"/>
-      <ellipse cx="126" cy="85" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.6"/>
+        <svg class="logo"
+             viewBox="0 0 680 220"
+             xmlns="http://www.w3.org/2000/svg"
+             role="img"
+             aria-label="CuePoint logo">
 
-      <circle cx="115" cy="116" r="15" fill="#1F7A4D"/>
-      <ellipse cx="111" cy="111" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
-      <circle cx="145" cy="116" r="15" fill="#1F7A4D"/>
-      <ellipse cx="141" cy="111" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+            <title>CuePoint logo</title>
 
-      <circle cx="100" cy="142" r="15" fill="#1F7A4D"/>
-      <ellipse cx="96" cy="137" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
-      <circle cx="130" cy="142" r="15" fill="#1F7A4D"/>
-      <ellipse cx="126" cy="137" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
-      <circle cx="160" cy="142" r="15" fill="#1F7A4D"/>
-      <ellipse cx="156" cy="137" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+            <circle cx="130" cy="90" r="15" fill="#D4AF37"/>
+            <ellipse cx="126" cy="85" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.6"/>
 
-      <circle cx="85" cy="168" r="15" fill="#1F7A4D"/>
-      <ellipse cx="81" cy="163" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
-      <circle cx="115" cy="168" r="15" fill="#1F7A4D"/>
-      <ellipse cx="111" cy="163" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
-      <circle cx="145" cy="168" r="15" fill="#1F7A4D"/>
-      <ellipse cx="141" cy="163" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
-      <circle cx="175" cy="168" r="15" fill="#1F7A4D"/>
-      <ellipse cx="171" cy="163" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+            <circle cx="115" cy="116" r="15" fill="#1F7A4D"/>
+            <ellipse cx="111" cy="111" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
 
-      <text x="260" y="140" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:62px;letter-spacing:-1px;">
-        <tspan fill="#FFFFFF">Cue</tspan><tspan fill="#D4AF37">Point</tspan>
-      </text>
-      <line x1="262" y1="156" x2="600" y2="156" stroke="#D4AF37" stroke-width="1" opacity="0.6"/>
-      <text x="262" y="180" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:19px;letter-spacing:3px;" fill="#B8C0BD">SNOOKERIN KOTI VERKOSSA</text>
-    </svg>
-  </a>
+            <circle cx="145" cy="116" r="15" fill="#1F7A4D"/>
+            <ellipse cx="141" cy="111" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
 
-  <nav>
-    <ul>
-      <li><a href="#opettele">Opettele</a></li>
-      <li><a href="#pelaajat">Pelaajat</a></li>
-      <li><a href="#turnaukset">Turnaukset</a></li>
-      <li><a href="#harjoittelu">Harjoittelu</a></li>
-    </ul>
-  </nav>
+            <circle cx="100" cy="142" r="15" fill="#1F7A4D"/>
+            <ellipse cx="96" cy="137" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="130" cy="142" r="15" fill="#1F7A4D"/>
+            <ellipse cx="126" cy="137" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="160" cy="142" r="15" fill="#1F7A4D"/>
+            <ellipse cx="156" cy="137" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="85" cy="168" r="15" fill="#1F7A4D"/>
+            <ellipse cx="81" cy="163" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="115" cy="168" r="15" fill="#1F7A4D"/>
+            <ellipse cx="111" cy="163" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="145" cy="168" r="15" fill="#1F7A4D"/>
+            <ellipse cx="141" cy="163" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="175" cy="168" r="15" fill="#1F7A4D"/>
+            <ellipse cx="171" cy="163" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <text x="260" y="140"
+                  style="font-family:'Poppins',sans-serif;
+                         font-weight:700;
+                         font-size:62px;
+                         letter-spacing:-1px;">
+                <tspan fill="#FFFFFF">Cue</tspan>
+                <tspan fill="#D4AF37">Point</tspan>
+            </text>
+
+            <line x1="262" y1="156" x2="600" y2="156"
+                  stroke="#D4AF37"
+                  stroke-width="1"
+                  opacity="0.6"/>
+
+            <text x="262" y="180"
+                  style="font-family:'Poppins',sans-serif;
+                         font-weight:600;
+                         font-size:19px;
+                         letter-spacing:3px;"
+                  fill="#B8C0BD">
+                SNOOKERIN KOTI VERKOSSA
+            </text>
+
+        </svg>
+
+    </a>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Etusivu</a></li>
+            <li><a href="opettele.html">Opettele</a></li>
+            <li><a href="pelaajat.html">Pelaajat</a></li>
+            <li><a href="turnaukset.html">Turnaukset</a></li>
+            <li><a href="palaute.html">Palaute</a></li>
+        </ul>
+    </nav>
+
+    <span id="clock"></span>
 
 </header>
 
-<!-- ---------- Hero: "iso kuva snookerpöydästä" ---------- -->
 <section class="hero">
-  <svg class="hero-table" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Snookerpöytä">
-    <rect x="0" y="0" width="1200" height="460" fill="#101414"/>
-    <rect x="60" y="60" width="1080" height="340" rx="14" fill="#3B2A1A"/>
-    <rect x="100" y="100" width="1000" height="260" rx="6" fill="#1F7A4D"/>
-    <circle cx="100" cy="100" r="22" fill="#101414"/>
-    <circle cx="600" cy="100" r="18" fill="#101414"/>
-    <circle cx="1100" cy="100" r="22" fill="#101414"/>
-    <circle cx="100" cy="360" r="22" fill="#101414"/>
-    <circle cx="600" cy="360" r="18" fill="#101414"/>
-    <circle cx="1100" cy="360" r="22" fill="#101414"/>
-    <circle cx="600" cy="230" r="6" fill="#B8C0BD" opacity="0.5"/>
-    <circle cx="330" cy="230" r="15" fill="#D4AF37"/>
-    <circle cx="420" cy="200" r="15" fill="#FFFFFF"/>
-    <circle cx="470" cy="260" r="15" fill="#1F7A4D"/>
-  </svg>
-  <div class="hero-overlay">
-    <h1>Tutustu snookerin maailmaan</h1>
-    <p>Säännöt, pelaajat, turnaukset ja harjoitteluvinkit samasta paikasta – oli kyseessä sitten ensimmäinen peli tai vuosien harrastus.</p>
-    <a class="cta" href="#opettele">Aloita tästä</a>
-  </div>
+
+    <img
+        class="hero-table"
+        src="img/snookerpoyta.svg"
+        alt="Snookerpöytä">
+
+    <div class="hero-overlay">
+
+        <h1>Tutustu snookerin maailmaan</h1>
+
+        <p>
+            Säännöt, pelaajat ja turnaukset samasta paikasta.
+        </p>
+
+    </div>
+
 </section>
 
-<!-- ---------- Neljä osiota ---------- -->
 <section class="sections-grid">
 
-  <a class="card" id="opettele" href="opettele.html">
-    <h2>Opettele</h2>
-    <p>Snookerin perussäännöt, pisteenlasku ja perustekniikat selkeästi selitettynä.</p>
-    <span class="tag">Aloita tästä →</span>
-  </a>
+    <a class="card" href="opettele.html">
+        <h2>Opettele</h2>
 
-  <a class="card" id="pelaajat" href="pelaajat.html">
-    <h2>Pelaajat</h2>
-    <p>Tunnetut snookerpelaajat, heidän uransa ja tärkeimmät saavutuksensa.</p>
-    <span class="tag">Katso pelaajat →</span>
-  </a>
+        <p>
+            Snookerin perussäännöt, pisteenlasku ja perustekniikat
+            selkeästi selitettynä.
+        </p>
 
-  <a class="card" id="turnaukset" href="turnaukset.html">
-    <h2>Turnaukset</h2>
-    <p>Ammattilaissnookerin tärkeimmät turnaukset ja niiden merkitys.</p>
-    <span class="tag">Selaa turnauksia →</span>
-  </a>
+        <span class="tag">
+            Aloita opettelu →
+        </span>
+    </a>
 
-  <a class="card" id="harjoittelu" href="harjoittelu.html">
-    <h2>Harjoittelu</h2>
-    <p>Vinkkejä tähtäämiseen, lyöntiin, breikkeihin ja harjoittelun suunnitteluun.</p>
-    <span class="tag">Kehity pelaajana →</span>
-  </a>
+    <a class="card" href="pelaajat.html">
+        <h2>Pelaajat</h2>
+
+        <p>
+            Tunnetut snookerpelaajat, heidän uransa ja tärkeimmät
+            saavutuksensa.
+        </p>
+
+        <span class="tag">
+            Katso pelaajat →
+        </span>
+    </a>
+
+    <a class="card" href="turnaukset.html">
+        <h2>Turnaukset</h2>
+
+        <p>
+            Ammattilaissnookerin tärkeimmät turnaukset ja niiden
+            merkitys.
+        </p>
+
+        <span class="tag">
+            Selaa turnauksia →
+        </span>
+    </a>
+
+    <a class="card" href="palaute.html">
+        <h2>Palaute</h2>
+
+        <p>
+            Haluatko kertoa mielipiteesi CuePointista?
+            Anna palautetta ja auta kehittämään sivustoa.
+        </p>
+
+        <span class="tag">
+            Anna palautetta →
+        </span>
+    </a>
 
 </section>
 
 <footer>
-  &copy; 2026 CuePoint
+    &copy; 2026 CuePoint
 </footer>
+
+<script src="js/clock.js"></script>
 
 </body>
 </html>
