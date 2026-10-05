@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pelaajat - CuePoint</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .page-content h2.section-title {
+            margin-top: 48px;
+            margin-bottom: 16px;
+        }
+
+        .player {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+            padding: 28px 0;
+            border-bottom: 1px solid #26332F;
+        }
+
+        .player:first-of-type {
+            margin-top: 24px;
+            border-top: 1px solid #26332F;
+        }
+
+        .player-photo {
+            flex: 0 0 150px;
+            width: 150px;
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #18211F;
+            border: 1px solid #26332F;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .player-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .player-info {
+            min-width: 0;
+        }
+
+        .player-info h3 {
+            margin: 0;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 1.3;
+        }
+
+        .player-facts {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 6px 16px;
+            margin: 0 0 14px;
+            font-size: 15px;
+        }
+
+        .player-facts dt {
+            color: #7F8985;
+            font-weight: 600;
+        }
+
+        .player-facts dd {
+            margin: 0;
+            color: #FFFFFF;
+        }
+
+        .player-facts dd.gold {
+            color: #D4AF37;
+            font-style: italic;
+        }
+
+        .player-info p {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .page-content p a,
+        .page-content p a:visited {
+            color: #D4AF37;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .page-content p a:hover {
+            color: #24925D;
+        }
+
+        .source-note {
+            margin-top: 28px;
+        }
+
+        @media (max-width: 600px) {
+            .player {
+                gap: 16px;
+            }
+
+            .player-photo {
+                flex-basis: 100px;
+                width: 100px;
+                height: 130px;
+            }
+
+            .player-info h3 {
+                font-size: 17px;
+            }
+
+            .player-facts {
+                font-size: 14px;
+                gap: 4px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <a href="index.html" aria-label="CuePoint etusivulle">
+
+        <svg class="logo"
+             viewBox="0 0 680 220"
+             xmlns="http://www.w3.org/2000/svg"
+             role="img"
+             aria-label="CuePoint logo">
+
+            <title>CuePoint logo</title>
+
+            <circle cx="130" cy="90" r="15" fill="#D4AF37"/>
+            <ellipse cx="126" cy="85" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.6"/>
+
+            <circle cx="115" cy="116" r="15" fill="#1F7A4D"/>
+            <ellipse cx="111" cy="111" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="145" cy="116" r="15" fill="#1F7A4D"/>
+            <ellipse cx="141" cy="111" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="100" cy="142" r="15" fill="#1F7A4D"/>
+            <ellipse cx="96" cy="137" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="130" cy="142" r="15" fill="#1F7A4D"/>
+            <ellipse cx="126" cy="137" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="160" cy="142" r="15" fill="#1F7A4D"/>
+            <ellipse cx="156" cy="137" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="85" cy="168" r="15" fill="#1F7A4D"/>
+            <ellipse cx="81" cy="163" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="115" cy="168" r="15" fill="#1F7A4D"/>
+            <ellipse cx="111" cy="163" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="145" cy="168" r="15" fill="#1F7A4D"/>
+            <ellipse cx="141" cy="163" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <circle cx="175" cy="168" r="15" fill="#1F7A4D"/>
+            <ellipse cx="171" cy="163" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.55"/>
+
+            <text x="260" y="140"
+                  style="font-family:'Poppins',sans-serif;
+                         font-weight:700;
+                         font-size:62px;
+                         letter-spacing:-1px;">
+                <tspan fill="#FFFFFF">Cue</tspan>
+                <tspan fill="#D4AF37">Point</tspan>
+            </text>
+
+            <line x1="262" y1="156" x2="600" y2="156"
+                  stroke="#D4AF37"
+                  stroke-width="1"
+                  opacity="0.6"/>
+
+            <text x="262" y="180"
+                  style="font-family:'Poppins',sans-serif;
+                         font-weight:600;
+                         font-size:19px;
+                         letter-spacing:3px;"
+                  fill="#B8C0BD">
+                SNOOKERIN KOTI VERKOSSA
+            </text>
+
+        </svg>
+
+    </a>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Etusivu</a></li>
+            <li><a href="opettele.html">Opettele</a></li>
+            <li><a href="pelaajat.html">Pelaajat</a></li>
+            <li><a href="turnaukset.html">Turnaukset</a></li>
+            <li><a href="palaute.html">Palaute</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<main class="page-content">
+
+    <h1>Snookerin pelaajat</h1>
+
+    <h2>Maailman tunnettuja snookerpelaajia</h2>
+
+    <p>
+        Snookerissa on paljon tunnettuja pelaajia, jotka ovat
+        saavuttaneet menestystä ammattilaistasolla.
+    </p>
+
+    <p>
+        Ronnie O'Sullivan on yksi snookerin tunnetuimmista pelaajista.
+        Hänet tunnetaan erityisesti nopeasta pelityylistään ja
+        pitkästä ammattilaisurastaan.
+    </p>
+
+    <p>
+        Judd Trump on tunnettu hyökkäävästä pelityylistään ja
+        näyttävistä lyönneistään. Hän on saavuttanut urallaan
+        useita merkittäviä turnausvoittoja.
+    </p>
+
+    <p>
+        Mark Selby tunnetaan tarkasta puolustuspelistään ja
+        taktisesta pelityylistään. Shaun Murphy puolestaan tunnetaan
+        vahvasta lyöntitekniikastaan ja pitkistä lyöntisarjoistaan.
+    </p>
+
+    <p>
+        Nykyään kiinalaiset pelaajat ovat nousseet snookerin huipulle
+        suuren harrastajamäärän ja taloudellisten panostusten myötä.
+        On arvioitu, että Kiinassa on jopa 300 000 biljardi- ja
+        pool-salia sekä 5,2 miljoonaa snookerin harrastajaa.
+    </p>
+
+    <h2 class="section-title">Maailman viisi parasta pelaajaa</h2>
+
+    <p>
+        Snookerin maailmanranking kertoo, ketkä pelaajat ovat
+        menestyneet parhaiten viime aikojen turnauksissa. Tässä
+        esitellään viisi parasta pelaajaa syyskuun 2026 rankingin
+        mukaan.
+    </p>
+
+    <article class="player">
+
+        <div class="player-photo">
+            <img src="img/Zhao-Xintong.jpg" alt="Zhao Xintong">
+        </div>
+
+        <div class="player-info">
+
+            <dl class="player-facts">
+
+                <dt>Sija</dt>
+                <dd>1</dd>
+
+                <dt>Nimi</dt>
+                <dd><h3>Zhao Xintong</h3></dd>
+
+                <dt>Lempinimi</dt>
+                <dd class="gold">"The Cyclone"</dd>
+
+                <dt>Ikä</dt>
+                <dd>29</dd>
+
+                <dt>Kansalaisuus</dt>
+                <dd>Kiina</dd>
+
+            </dl>
+
+            <p>
+                Voitti maailmanmestaruuden vuonna 2025 amatöörinä ja
+                nousi elokuussa 2026 maailmanranking-ykköseksi.
+            </p>
+
+        </div>
+
+    </article>
+
+    <article class="player">
+
+        <div class="player-photo">
+            <img src="img/juddtrump.jpg" alt="Judd Trump">
+        </div>
+
+        <div class="player-info">
+
+            <dl class="player-facts">
+
+                <dt>Sija</dt>
+                <dd>2</dd>
+
+                <dt>Nimi</dt>
+                <dd><h3>Judd Trump</h3></dd>
+
+                <dt>Lempinimi</dt>
+                <dd class="gold">"The Ace in the Pack"</dd>
+
+                <dt>Ikä</dt>
+                <dd>37</dd>
+
+                <dt>Kansalaisuus</dt>
+                <dd>Englanti</dd>
+
+            </dl>
+
+            <p>
+                Maailmanmestari vuodelta 2019. Hyökkäävä ja näyttävä
+                pelaaja, joka oli maailmanranking-ykkönen elokuusta
+                2024 elokuuhun 2026.
+            </p>
+
+        </div>
+
+    </article>
+
+    <article class="player">
+
+        <div class="player-photo">
+            <img src="img/neilrobertson.webp" alt="Neil Robertson">
+        </div>
+
+        <div class="player-info">
+
+            <dl class="player-facts">
+
+                <dt>Sija</dt>
+                <dd>3</dd>
+
+                <dt>Nimi</dt>
+                <dd><h3>Neil Robertson</h3></dd>
+
+                <dt>Lempinimi</dt>
+                <dd class="gold">"The Thunder from Down Under"</dd>
+
+                <dt>Ikä</dt>
+                <dd>44</dd>
+
+                <dt>Kansalaisuus</dt>
+                <dd>Australia</dd>
+
+            </dl>
+
+            <p>
+                Voitti maailmanmestaruuden vuonna 2010 ensimmäisenä
+                australialaisena. Tunnetaan tarkasta pitkien lyöntien pelistä.
+            </p>
+
+        </div>
+
+    </article>
+
+    <article class="player">
+
+        <div class="player-photo">
+            <img src="img/Wu-Yize.jpg" alt="Wu Yize">
+        </div>
+
+        <div class="player-info">
+
+            <dl class="player-facts">
+
+                <dt>Sija</dt>
+                <dd>4</dd>
+
+                <dt>Nimi</dt>
+                <dd><h3>Wu Yize</h3></dd>
+
+                <dt>Lempinimi</dt>
+                <dd class="gold">"The Lanzhou Lion"</dd>
+
+                <dt>Ikä</dt>
+                <dd>22</dd>
+
+                <dt>Kansalaisuus</dt>
+                <dd>Kiina</dd>
+
+            </dl>
+
+            <p>
+                Vuoden 2026 maailmanmestari, joka voitti finaalissa
+                Shaun Murphyn 18–17. Toiseksi nuorin maailmanmestari koskaan.
+            </p>
+
+        </div>
+
+    </article>
+
+    <article class="player">
+
+        <div class="player-photo">
+            <img src="img/mark-selby.webp" alt="Mark Selby">
+        </div>
+
+        <div class="player-info">
+
+            <dl class="player-facts">
+
+                <dt>Sija</dt>
+                <dd>5</dd>
+
+                <dt>Nimi</dt>
+                <dd><h3>Mark Selby</h3></dd>
+
+                <dt>Lempinimi</dt>
+                <dd class="gold">"The Jester from Leicester"</dd>
+
+                <dt>Ikä</dt>
+                <dd>43</dd>
+
+                <dt>Kansalaisuus</dt>
+                <dd>Englanti</dd>
+
+            </dl>
+
+            <p>
+                Nelinkertainen maailmanmestari (2014, 2016, 2017 ja 2021).
+                Tunnetaan tarkasta puolustuspelistä ja taktisesta pelityylistä.
+            </p>
+
+        </div>
+
+    </article>
+
+    <p class="source-note">
+        Ranking päivittyy kauden aikana, joten sijoitukset voivat
+        muuttua. Ajantasaisen listan löydät
+        <a href="https://www.snooker.org/res/index.asp?template=31"
+           target="_blank"
+           rel="noopener noreferrer">
+            snooker.org-sivustolta
+        </a>.
+    </p>
+
+</main>
+
+<footer>
+    &copy; 2026 CuePoint
+</footer>
+
+</body>
+</html>
